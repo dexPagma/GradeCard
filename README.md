@@ -51,7 +51,7 @@ Explain how to use the GradeCardProgram, input formats, expected outputs, etc.
   - **math.h**: For mathematical functions like trigonometric, logarithmic, and exponential functions.
   - **ctype.h**: For character handling functions.
   - **time.h**: For date and time functions.
-- **Makefile Libraries:**
+- **Makefile Libraries**
 
 ### License
 This GradeCard is licensed under the terms specified by PES University. 
