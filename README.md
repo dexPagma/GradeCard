@@ -2,7 +2,7 @@
 ## GradeCard
 
 ### Overview
-Briefly describe what the GradeCardProgram does and its purpose.
+Briefly describe what the GradeCard does and its purpose.
 
 ### Files
 - **mk.h:** Header file containing declarations
@@ -17,7 +17,7 @@ mingw32-make -f mkfile.mk
 ```
 
 ### Execution
-After compilation, the output file will be named **grade_card_program**. Run it to use the GradeCardProgram.
+After compilation, the output file will be named **PES_Official_GradeCaed**. Run it to use the GradeCardProgram.
 
 ### Usage
 Explain how to use the GradeCardProgram, input formats, expected outputs, etc.
@@ -37,4 +37,3 @@ Optionally, provide contact information for queries or contributions.
 ### Acknowledgements
 Give credit to any resources, libraries, or individuals you used or consulted for the project.
 
-By following this structure, you can create a clear and informative README file for your GradeCard on Git.
