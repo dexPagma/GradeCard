@@ -2,7 +2,26 @@
 ## GradeCard
 
 ### Overview
-Briefly describe what the GradeCard does and its purpose.
+  - **Source Files**:
+    - **main.c**: This file likely contains the main function and possibly the user interface or entry point of the program.
+    - **marks.c**: This file probably contains functions related to handling student marks or grades.
+
+  - **Header File**:
+    - **mk.h**: This header file is included in the source files and likely contains function prototypes, data structures, or other declarations necessary for the program to compile and run correctly.
+
+  - **Makefile**:
+    - **CC = gcc**: Specifies the compiler to be used as `gcc`.
+    - **CFLAGS = -Wall -Wextra -I.**: Sets compiler flags to include warnings (`-Wall` and `-Wextra`) and include directories (`-I.`).
+    - **SRCS = main.c marks.c**: Lists the source files used in the program.
+    - **OBJS = $(SRCS:.c=.o)**: Creates a list of object files derived from source files.
+    - **HEADER = mk.h**: Specifies the header file dependency.
+    - **EXECUTABLE = PES_Official_GradeCard**: Defines the name of the executable file.
+    - **all**: Target to build the executable.
+    - **$(EXECUTABLE)**: Rule to build the executable from object files.
+    - **%.o: %.c $(HEADER)**: Rule to compile each source file into an object file.
+    - **clean**: Target to clean up generated files.
+    - **del $(EXECUTABLE) $(OBJS)**: Command to delete the executable and object files.
+
 
 ### Files
 - **mk.h:** Header file containing declarations
