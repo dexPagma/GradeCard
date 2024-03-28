@@ -58,7 +58,3 @@ This GradeCard is licensed under the terms specified by PES University.
 
 ### Acknowledgements
 - **Prof. Bivas Bhattacharya**: For guidance and mentorship throughout the development of this project.
-- **MingW64 Developers**: For developing the MingW64 compiler used in this project.
-- **Standard C Library Developers**: For the essential C libraries used in the code.
-- **Notepad Developers**: For the text editor used for writing the code.
-- **Open Source Community**: For the support and resources that helped in the development of this project.
