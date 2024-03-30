@@ -6,13 +6,14 @@ const char *subject_names[] = {"Physics", "PSWC", "Mathematics", "Electrical", "
 
 void inputStudentData(char name[], float ISA1[], float ISA2[]) {
     printf("Enter student name: ");
-    scanf("%49s", name);
+    scanf("%s", name);
+    printf("Enter marks for ISA1:\n");
     for (int i = 0; i < 5; i++) { 
         printf("%s: ", subject_names[i]); 
         scanf("%f", &ISA1[i]);
     }
 
-    printf("Enter marks for exam 2:\n");
+    printf("Enter marks for ISA2:\n");
     for (int i = 0; i < 5; i++) { 
         printf("%s: ", subject_names[i]); 
         scanf("%f", &ISA2[i]);
@@ -56,9 +57,9 @@ char gradeAssignment(float avg) {
 
 void genGradeCard(char name[], char grade1, char grade2) 
 {
-    printf("\n===== Grade Card =====\n");
+    printf("\n===== GradeCard =====\n");
     printf("Name: %s\n", name);
-    printf("Exam 1 Grade: %c\n", grade1);
-    printf("Exam 2 Grade: %c\n", grade2);
+    printf("ISA1 Grade: %c\n", grade1);
+    printf("ISA2 Grade: %c\n", grade2);
 
 }

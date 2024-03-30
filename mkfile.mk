@@ -15,4 +15,4 @@ $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	del $(EXECUTABLE) $(OBJS)
+	rm -f $(EXECUTABLE) $(OBJS)
