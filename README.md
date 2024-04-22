@@ -36,6 +36,12 @@ To compile the project using MingW64 on Windows Command Prompt:
 mingw32-make -f mkfile.mk
 ```
 
+### Technologies Used
+  - **Programming Language**: C
+  - **Compiler**: GCC
+  - **Build Tool**: GNU Make
+  - **Version Control**: Git
+
 ### Execution
 After compilation, the output file will be named **PES_Official_GradeCaed**. Run it to use the GradeCard.
 
