@@ -1,5 +1,6 @@
 # PSWC-SEM2
 ## GradeCard
+  -This Grade Card Management System is a simple C program that allows users to input student grades, calculate the average grade, and display the grade card for each student.
 
 ### Overview
   - **Source Files**:
