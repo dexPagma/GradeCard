@@ -47,7 +47,7 @@ Make sure you have the following installed:
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/bizbrainiac/GradeCard.git
+    git clone https://github.com/BizBrainiac/GradeCard.git
     ```
 
 2. **Navigate to the Project Directory**
