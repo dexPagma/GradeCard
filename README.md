@@ -63,9 +63,9 @@ Make sure you have the following installed:
     ```
 
 4. **Run the Program**
-
-    ```bash
-    ./PES_Official_GradeCard.exe
+   ```bash
+   gcc main.c marks.c -o PES_Official_GradeCard
+   ./PES_Official_GradeCard.exe
     ```
 
 ## 🎯 Features
