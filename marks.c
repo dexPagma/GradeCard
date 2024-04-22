@@ -1,33 +1,54 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include "mk.h"
+
 const char *subject_names[] = {"Physics", "PSWC", "Mathematics", "Electrical", "Mechanical"};
+const int isa_marks = 40;
+const int assignment_marks = 10;
+const int esa_marks = 100;
 
-
-void inputStudentData(char name[], float ISA1[], float ISA2[]) {
+void inputStudentData(Student *student) {
     printf("Enter student name: ");
-    scanf("%s", name);
-    printf("Enter marks for ISA1:\n");
-    for (int i = 0; i < 5; i++) { 
-        printf("%s: ", subject_names[i]); 
-        scanf("%f", &ISA1[i]);
-    }
-
-    printf("Enter marks for ISA2:\n");
-    for (int i = 0; i < 5; i++) { 
-        printf("%s: ", subject_names[i]); 
-        scanf("%f", &ISA2[i]);
+    scanf("%s", student->name);
+    
+    for (int i = 0; i < 5; i++) {
+        printf("Enter marks for %s ISA1 (Max 40): ", subject_names[i]); 
+        scanf("%f", &student->ISA1[i]);
+        
+        if (student->ISA1[i] > 40 || student->ISA1[i] < 0) {
+            printf("Invalid marks entered for %s ISA1. Exiting program.\n", subject_names[i]);
+            exit(1);
+        }
+        
+        printf("Enter marks for %s ISA2 (Max 40): ", subject_names[i]); 
+        scanf("%f", &student->ISA2[i]);
+        
+        if (student->ISA2[i] > 40 || student->ISA2[i] < 0) {
+            printf("Invalid marks entered for %s ISA2. Exiting program.\n", subject_names[i]);
+            exit(1);
+        }
+        
+        printf("Enter marks for %s Assignment (Max 10): ", subject_names[i]); 
+        scanf("%f", &student->Assignment[i]);
+        
+        if (student->Assignment[i] > 10 || student->Assignment[i] < 0) {
+            printf("Invalid marks entered for %s Assignment. Exiting program.\n", subject_names[i]);
+            exit(1);
+        }
+        
+        printf("Enter marks for %s ESA (Max 100): ", subject_names[i]); 
+        scanf("%f", &student->ESA[i]);
+        
+        if (student->ESA[i] > 100 || student->ESA[i] < 0) {
+            printf("Invalid marks entered for %s ESA. Exiting program.\n", subject_names[i]);
+            exit(1);
+        }
     }
 }
 
 
-float calAvg(float marks[], int size) {
-    float sum = 0.0;
-    for (int i = 0; i < size; i++) {
-        sum += marks[i];
-    }
-    return sum / size;
-}
 
 char gradeAssignment(float avg) {
     char grade;
@@ -52,27 +73,16 @@ char gradeAssignment(float avg) {
 }
 
 void calculateAverageAndGrade(Student *student) {
-    student->avg1 = calAvg(student->ISA1, 5);
-    student->avg2 = calAvg(student->ISA2, 5);
-    
-    student->grade1 = gradeAssignment(student->avg1);
-    student->grade2 = gradeAssignment(student->avg2);
-}
-
-Student* findStudentByName(Student *students, int num_students, const char *name) {
-    for (int i = 0; i < num_students; i++) {
-        if (strcmp(students[i].name, name) == 0) {
-            return &students[i];
-        }
+    for (int i = 0; i < 5; i++) {
+        float total_marks = (student->ISA1[i] + student->ISA2[i]) / 2 + student->Assignment[i] + student->ESA[i] / 2;
+        student->avg1[i] = total_marks;
+        student->grade1[i] = gradeAssignment(student->avg1[i]);
     }
-    return NULL;
 }
 
-void genGradeCard(char name[], char grade1, char grade2) 
-{
-    printf("\n===== GradeCard =====\n");
-    printf("Name: %s\n", name);
-    printf("ISA1 Grade: %c\n", grade1);
-    printf("ISA2 Grade: %c\n", grade2);
-
-}  
+void genGradeCard(Student *student) {
+    printf("\n===== GradeCard for %s =====\n", student->name);
+    for (int i = 0; i < 5; i++) {
+        printf("%s Grade: %c\n", subject_names[i], student->grade1[i]);
+    }
+}

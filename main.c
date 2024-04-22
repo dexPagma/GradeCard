@@ -20,7 +20,7 @@ int main() {
         printf("\nStudent %d:\n", i + 1);
         inputStudentData(&students[i]);
         calculateAverageAndGrade(&students[i]);
-        genGradeCard(students[i].name, students[i].grade1, students[i].grade2);
+        genGradeCard(&students[i]);
     }
 
     // TODO: Implement additional functionality as needed
