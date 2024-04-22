@@ -20,11 +20,10 @@ void inputStudentData(char name[], float ISA1[], float ISA2[]) {
     }
 }
 
-float calAvg(float marks[], int size) 
-    {
+
+float calAvg(float marks[], int size) {
     float sum = 0.0;
-    for (int i = 0; i < size; i++) 
-    {
+    for (int i = 0; i < size; i++) {
         sum += marks[i];
     }
     return sum / size;
@@ -52,8 +51,22 @@ char gradeAssignment(float avg) {
     return grade;
 }
 
+void calculateAverageAndGrade(Student *student) {
+    student->avg1 = calAvg(student->ISA1, 5);
+    student->avg2 = calAvg(student->ISA2, 5);
+    
+    student->grade1 = gradeAssignment(student->avg1);
+    student->grade2 = gradeAssignment(student->avg2);
+}
 
-
+Student* findStudentByName(Student *students, int num_students, const char *name) {
+    for (int i = 0; i < num_students; i++) {
+        if (strcmp(students[i].name, name) == 0) {
+            return &students[i];
+        }
+    }
+    return NULL;
+}
 
 void genGradeCard(char name[], char grade1, char grade2) 
 {
@@ -62,4 +75,4 @@ void genGradeCard(char name[], char grade1, char grade2)
     printf("ISA1 Grade: %c\n", grade1);
     printf("ISA2 Grade: %c\n", grade2);
 
-}
+}  

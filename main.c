@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<math.h>
 #include<time.h>
 #include"mk.h"
@@ -8,21 +9,24 @@ int main() {
     printf("Enter the number of students: ");
     scanf("%d", &num_students);
 
-    for (int i = 0; i < num_students; i++) {
-        char name[50];
-        float ISA1[5], ISA2[5];
-
-        printf("\nStudent %d:\n\n", i + 1);
-        inputStudentData(name, ISA1, ISA2);
-
-        float avg1 = calAvg(ISA1, 5);
-        float avg2 = calAvg(ISA2, 5);
-
-	char grade1 = gradeAssignment(avg1);
-	char grade2 = gradeAssignment(avg2);
-
-        genGradeCard(name,grade1,grade2);
+    // Allocate memory for the array of students
+    Student *students = malloc(num_students * sizeof(Student));
+    if (students == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
     }
+
+    for (int i = 0; i < num_students; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        inputStudentData(&students[i]);
+        calculateAverageAndGrade(&students[i]);
+        genGradeCard(students[i].name, students[i].grade1, students[i].grade2);
+    }
+
+    // TODO: Implement additional functionality as needed
+
+    // Free allocated memory
+    free(students);
 
     return 0;
 }
