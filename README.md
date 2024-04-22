@@ -1,60 +1,85 @@
-# PSWC-SEM2
-## GradeCard
+# 📚 PSWC-SEM2: GradeCard Program 🎓
 
-### Overview
-  - **Source Files**:
-    - **main.c**: This file likely contains the main function and possibly the user interface or entry point of the program.
-    - **marks.c**: This file probably contains functions related to handling student marks or grades.
+## 🌟 Overview
 
-  - **Header File**:
-    - **mk.h**: This header file is included in the source files and likely contains function prototypes, data structures, or other declarations necessary for the program to compile and run correctly.
+Welcome to the GradeCard Program repository! This academic project showcases a C-based system designed to manage student data, calculate average scores for Internal Assessment exams (ISA1 and ISA2), and generate personalized grade cards. Dive in to explore the magic of automated grading! 🚀
 
-  - **Makefile**:
-    - **CC = gcc**: Specifies the compiler to be used as `gcc`.
-    - **CFLAGS = -Wall -Wextra -I.**: Sets compiler flags to include warnings (`-Wall` and `-Wextra`) and include directories (`-I.`).
-    - **SRCS = main.c marks.c**: Lists the source files used in the program.
-    - **OBJS = $(SRCS:.c=.o)**: Creates a list of object files derived from source files.
-    - **HEADER = mk.h**: Specifies the header file dependency.
-    - **EXECUTABLE = PES_Official_GradeCard**: Defines the name of the executable file.
-    - **all**: Target to build the executable.
-    - **$(EXECUTABLE)**: Rule to build the executable from object files.
-    - **%.o: %.c $(HEADER)**: Rule to compile each source file into an object file.
-    - **clean**: Target to clean up generated files.
-    - **del $(EXECUTABLE) $(OBJS)**: Command to delete the executable and object files.
+### 📂 Project Structure
 
+- **Source Files**:
+  - **main.c**: Entry point of the program.
+  - **marks.c**: Contains functions related to student marks.
 
-### Files
-- **mk.h:** Header file containing declarations
-- **marks.c:** Code file for student-related functions
-- **main.c:** Main program file
-- **mkfile.mk:** Makefile containing compilation instructions
+- **Header File**:
+  - **mk.h**: Essential for function prototypes and data structures.
 
-### Compilation
-To compile the project using MingW64 on Windows Command Prompt:
-```bash
-mingw32-make -f mkfile.mk
-```
+- **Makefile**:
+  - **Compiler**: GCC
+  - **Build Tool**: GNU Make
+  - **Execution**: PES_Official_GradeCard
 
-### Execution
-After compilation, the output file will be named **PES_Official_GradeCaed**. Run it to use the GradeCard.
+## 📁 Files
 
-### Usage
-Explain how to use the GradeCardProgram, input formats, expected outputs, etc.
+- **mk.h**: Header file with essential declarations.
+- **marks.c**: Code file for student-related functions.
+- **main.c**: Main program file.
+- **mkfile.mk**: Makefile for compilation.
 
-### Dependencies
+## 💻 Technologies Used
 
-- **MingW64:** Compiler used for compiling the code
-- **Standard C Libraries:**
-  - **stdio.h**: For input and output operations.
-  - **stdlib.h**: For memory allocation, random number generation, and other general utilities.
-  - **string.h**: For string manipulation functions.
-  - **math.h**: For mathematical functions like trigonometric, logarithmic, and exponential functions.
-  - **ctype.h**: For character handling functions.
-  - **time.h**: For date and time functions.
-- **Makefile Libraries**
+- **Language**: C
+- **Compiler**: GCC
+- **Build Tool**: GNU Make
+- **Version Control**: Git
 
-### License
-This GradeCard is licensed under the terms specified by PES University. 
+## 🚀 Getting Started
 
-### Acknowledgements
-- **Prof. Bivas Bhattacharya**: For guidance and mentorship throughout the development of this project.
+### 🛠️ Prerequisites
+
+Make sure you have the following installed:
+
+- GCC Compiler
+- GNU Make
+- Git
+
+### 📥 Installation and Execution
+
+1. **Clone the Repository**
+
+    ```bash
+    git clone https://github.com/BizBrainiac/GradeCard.git
+    ```
+
+2. **Navigate to the Project Directory**
+
+    ```bash
+    cd GradeCard
+    ```
+
+3. **Compile the Program**
+
+    ```bash
+    mingw32-make -f mkfile.mk
+    ```
+
+4. **Run the Program**
+
+    ```bash
+    ./PES_Official_GradeCard.exe
+    ```
+
+## 🎯 Features
+
+- **Data Input**: Easily capture student details and their ISA1 & ISA2 marks.
+- **Average Calculation**: Instantly compute average scores.
+- **Grading System**: Automatically assign grades (S, A, B, C, D, E, F).
+- **GradeCard Generation**: Display personalized GradeCards.
+
+## 📜 License
+
+This GradeCard Program is licensed under the terms specified by PES University.
+
+## 🙏 Acknowledgements
+
+- **Prof. Bivas Bhattacharya**: Thank you for the invaluable guidance and mentorship throughout this project.
+
