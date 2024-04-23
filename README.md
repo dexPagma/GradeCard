@@ -24,6 +24,7 @@ Welcome to the GradeCard Program repository! This academic project showcases a C
 - **marks.c**: Code file for student-related functions.
 - **main.c**: Main program file.
 - **mkfile.mk**: Makefile for compilation.
+- **Makefile**: Easier version of makefile gor compilation.
 
 ## 💻 Technologies Used
 
