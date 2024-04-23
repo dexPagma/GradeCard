@@ -63,10 +63,18 @@ Make sure you have the following installed:
     ```
 
 4. **Run the Program**
+   - **Uses mkfile.mk**
    ```bash
    gcc main.c marks.c -o PES_Official_GradeCard
    ./PES_Official_GradeCard.exe
     ```
+6. **Run the Program (Method 2)**
+   - **Uses Makefile**
+   ```bash
+   make
+   ./studentcard
+   ```
+   
 
 ## 🎯 Features
 
