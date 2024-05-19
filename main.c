@@ -1,8 +1,9 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
-#include<time.h>
-#include"mk.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include "mk.h"
+
 
 int main() {
     int num_students;
@@ -16,14 +17,22 @@ int main() {
         return 1;
     }
 
+    FILE *outputFile = fopen("grade_card.txt", "w");
+    if (outputFile == NULL) {
+        printf("Error opening file.\n");
+        free(students);
+        return 1;
+    }
+
     for (int i = 0; i < num_students; i++) {
         printf("\nStudent %d:\n", i + 1);
         inputStudentData(&students[i]);
         calculateAverageAndGrade(&students[i]);
-        genGradeCard(&students[i]);
+        genGradeCardToFile(&students[i], outputFile);
     }
 
-    // TODO: Implement additional functionality as needed
+    // Close the file
+    fclose(outputFile);
 
     // Free allocated memory
     free(students);

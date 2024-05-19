@@ -1,0 +1,7 @@
+
+===== GradeCard for James =====
+Physics Grade: S
+PSWC Grade: S
+Mathematics Grade: A
+Electrical Grade: A
+Mechanical Grade: D

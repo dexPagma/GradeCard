@@ -20,7 +20,7 @@ void inputStudentData(Student *student);
 float calAvg(float marks[], int size);
 char gradeAssignment(float avg);
 void calculateAverageAndGrade(Student *student);
-void genGradeCard(Student *student);
+void genGradeCardToFile(Student *student, FILE *file);
 Student* findStudentByName(Student *students, int num_students, const char *name);
 
 #endif // MK_H

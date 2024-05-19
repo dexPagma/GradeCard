@@ -80,9 +80,11 @@ void calculateAverageAndGrade(Student *student) {
     }
 }
 
-void genGradeCard(Student *student) {
-    printf("\n===== GradeCard for %s =====\n", student->name);
+void genGradeCardToFile(Student *student, FILE *file) {
+    fprintf(file, "\n===== GradeCard for %s =====\n", student->name);
     for (int i = 0; i < 5; i++) {
-        printf("%s Grade: %c\n", subject_names[i], student->grade1[i]);
+        fprintf(file, "%s Grade: %c\n", subject_names[i], student->grade1[i]);
     }
 }
+
+
