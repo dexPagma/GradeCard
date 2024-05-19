@@ -24,6 +24,7 @@ Welcome to the GradeCard Program repository! This academic project showcases a C
 - **marks.c**: Code file for student-related functions.
 - **main.c**: Main program file.
 - **mkfile.mk**: Makefile for compilation.
+- **Makefile**: Easier version of makefile gor compilation.
 
 ## 💻 Technologies Used
 
@@ -63,10 +64,18 @@ Make sure you have the following installed:
     ```
 
 4. **Run the Program**
-
-    ```bash
-    ./PES_Official_GradeCard.exe
+   - **Uses mkfile.mk**
+   ```bash
+   gcc main.c marks.c -o PES_Official_GradeCard
+   ./PES_Official_GradeCard.exe
     ```
+6. **Run the Program (Method 2)**
+   - **Uses Makefile**
+   ```bash
+   make
+   ./studentcard
+   ```
+   
 
 ## 🎯 Features
 
